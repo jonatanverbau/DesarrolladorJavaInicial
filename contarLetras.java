@@ -7,7 +7,7 @@
  *
  * @author Jonatan
  */
-public class Actividad3 {
+public class contarLetras {
 public static int contarLetra(String texto, char letra) {
         char[] caracteres = new char[texto.length()];
         int contador = 0;
@@ -21,7 +21,6 @@ public static int contarLetra(String texto, char letra) {
     }
     
     public static void main(String args[]) {
-        // TODO code application logic here
         String texto = "ejercicio de la clase 3";
         char letra = 'a';
         int veces = contarLetra(texto, letra);

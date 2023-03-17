@@ -1,9 +1,4 @@
 import java.util.Scanner;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
-
 /**
  *
  * @author Jonatan
@@ -23,6 +18,7 @@ public class Codificador {
             int indice = ABECEDARIO.indexOf(caracter);
             //en el caso de que caracter se encuentre en la cadena hace esto:
             if (indice != -1) {
+                //al indice del caracter le sumamos el desplazamiento y con el módulo % lo que hacemos es ajustar el índice al rango de nuestro abecedario para que quede dentro del rango.
                 int indiceCodificado = (indice + desplazamiento) % ABECEDARIO.length();
                 //con append agregamos al resultado el caracter codificado, es decir con el desplazamiento aplicado
                 resultado.append(ABECEDARIO.charAt(indiceCodificado));
