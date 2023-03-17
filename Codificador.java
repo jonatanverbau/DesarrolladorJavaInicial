@@ -14,6 +14,7 @@ public class Codificador {
 
     public static String codificar(String texto, int desplazamiento) {
         StringBuilder resultado = new StringBuilder();
+        texto = texto.toLowerCase();
         for (int i = 0; i < texto.length(); i++) {
             char caracter = texto.charAt(i);
             int indice = ABECEDARIO.indexOf(caracter);
