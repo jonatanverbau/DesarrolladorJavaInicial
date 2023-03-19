@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class Codificador {
 
-    private static final String ABECEDARIO = "abcdefghijklmnñopqrstuvwxyz ";
+    private static final String ABECEDARIO = "abcdefghijklmnñopqrstuvwxyz";
 
     public static String codificar(String texto, int desplazamiento) {
         StringBuilder resultado = new StringBuilder();
@@ -47,7 +47,7 @@ public class Codificador {
             String cadenaCodificada = Codificador.codificar(cadena, desplazamiento);
             String cadenaDecodificada = Codificador.decodificar(cadenaCodificada, desplazamiento);
 
-            System.out.println("Cadena codificada: " + cadenaCodificada);
+            System.out.println("Cadena codificada: " + cadenaCodificada.replace(" ", ""));
             System.out.println("Cadena decodificada: " + cadenaDecodificada);
         }
     }
