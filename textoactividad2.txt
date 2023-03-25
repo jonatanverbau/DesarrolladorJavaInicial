@@ -1,7 +1,0 @@
-ejercicio 2
-esta es una modificación
-<<<<<<< Updated upstream
-esta es la tercera modificación
-=======
-modificación en local
->>>>>>> Stashed changes
