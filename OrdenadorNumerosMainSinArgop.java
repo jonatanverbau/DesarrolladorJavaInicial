@@ -1,64 +1,47 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class OrdenadorNumerosMainSinArgop {
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            int num1 = 0, num2 = 0, num3 = 0;
-            String orden = "";
-            boolean num1Set = false, num2Set = false, num3Set = false;
-    
-            // Check for command line arguments
-            for (int i = 0; i < args.length; i++) {
-                Object arg = args[i];
-                if (arg instanceof String) {
-                    String str = (String) arg;
-                    if (str.equals("a") || str.equals("d")) {
-                        orden = str;
-                    }
-                } else if (arg instanceof Integer) {
-                    Integer[] num = (Integer[]) arg;
-                     
-                        num1 = num[i];
-                        num1Set = true;
-                    if (i == 1) {
-                        num2 = num[i];
-                        num2Set = true;
-                    } else if (i == 2) {
-                        num3 = num[i];
-                        num3Set = true;
-                    }
+        int[] nums = new int[3];
+        String order = "";
+        
+        if(args.length < 4) {
+            try (Scanner scanner = new Scanner(System.in)) {
+                for(int i=0; i<args.length; i++) {
+                    nums[i] = Integer.parseInt(args[i]);
                 }
+                
+                for(int i=args.length; i<3; i++) {
+                    System.out.println("Ingrese el número " + (i+1) + ": ");
+                    nums[i] = scanner.nextInt();
+                }
+                
+                System.out.println("Ingrese el orden (a o d): ");
+                order = scanner.next();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
-    
-            // Prompt the user for any missing arguments
-            if (!num1Set) {
-                System.out.print("Ingrese el primer número: ");
-                num1 = scanner.nextInt();
-            }
-            if (!num2Set) {
-                System.out.print("Ingrese el segundo número: ");
-                num2 = scanner.nextInt();
-            }
-            if (!num3Set) {
-                System.out.print("Ingrese el tercer número: ");
-                num3 = scanner.nextInt();
-            }
-            if (orden.equals("")) {
-                System.out.print("Ingrese la letra de ordenamiento (a/d): ");
-                orden = scanner.next();
-            }
-    
-            scanner.close();
-    
-            int[] nums = ordenarNumeros(num1, num2, num3, orden);
-    
-            System.out.println("Números ordenados: " + Arrays.toString(nums));
+        }
+        else {
+            nums[0] = Integer.parseInt(args[0]);
+            nums[1] = Integer.parseInt(args[1]);
+            nums[2] = Integer.parseInt(args[2]);
+            order = args[3];
+        }
+        
+        // Llamada al método de ordenamiento
+        int[] ordenados = ordenarNumeros(nums, order);
+        
+        // Imprime los números ordenados
+        System.out.println("Números ordenados:");
+        for(int i=0; i<3; i++) {
+            System.out.println(ordenados[i]);
         }
     }
 
-    public static int[] ordenarNumeros(int num1, int num2, int num3, String orden) {
-        int[] nums = { num1, num2, num3 };
+    public static int[] ordenarNumeros(int[] nums, String orden) {
+
         int t;
         switch (orden) {
             case "a":
