@@ -1,4 +1,5 @@
-package clase6;
+package clase6.src;
+
 public class Main{
 public static void main(String[] args) {
   

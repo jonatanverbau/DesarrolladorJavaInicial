@@ -1,6 +1,6 @@
-package clase6;
-
-public class Calculadora {
+package clase6.test;
+import org.junit.Test;
+public class testCalculadora {
 
   public double sumar(double unNumero, double otroNumero) {
     return unNumero + otroNumero;
