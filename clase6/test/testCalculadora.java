@@ -1,23 +1,39 @@
 package clase6.test;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import org.junit.*;
+
+import clase6.src.Calculadora;
 public class testCalculadora {
 
-  public double sumar(double unNumero, double otroNumero) {
-    return unNumero + otroNumero;
+  @Test
+  public void test1() {
+    
+    Calculadora c= new Calculadora();
+    
+    assertEquals(240,c.multiplicar(80,3),0);
+    
   }
 
-  public double restar(double unNumero, double otroNumero) {
-    return unNumero - otroNumero;
+  @Test
+  public void test2() {
+    Calculadora c= new Calculadora();
+    
+    assertEquals(110,c.dividir(c.sumar(150,180),3),0);
   }
 
-  public double multiplicar(double unNumero, double otroNumero) {
-    return unNumero * otroNumero;
+  @Test
+  public void test3() {
+    Calculadora c= new Calculadora();
+    
+    assertNotEquals(605,c.multiplicar(c.restar(90,50),15),0);
   }
 
-  public double dividir(double unNumero, double otroNumero) {
-    if (otroNumero == 0) {
-      throw new IllegalArgumentException("No se puede dividir por cero");
-    }
-    return unNumero / otroNumero;
+  @Test
+  public void test4() {
+    Calculadora c= new Calculadora();
+    
+    assertNotEquals(2700,c.multiplicar(c.sumar(70,40),25),0);
   }
 }
