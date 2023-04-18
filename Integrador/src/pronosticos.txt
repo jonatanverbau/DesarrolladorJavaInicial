@@ -1,0 +1,5 @@
+equipo_local,equipo_visitante,goles_local,goles_visitante
+Boca,River,3,2
+Union,Colon,0,0
+Rosario,Newells,0,1
+Estudiantes,Gimnasia,5,4
