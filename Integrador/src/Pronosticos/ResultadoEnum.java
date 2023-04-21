@@ -1,4 +1,4 @@
-package TrabajoIntegrador.src;
+package Pronosticos;
 
 public enum ResultadoEnum {
     VICTORIA, DERROTA, EMPATE

@@ -1,8 +1,8 @@
-package TrabajoIntegrador.src;
+package Pronosticos;
 
 public class Equipo {
-    private String nombre;
-    private String descripcion;
+    String nombre;
+    String descripcion;
 
     public Equipo(String nombre, String descripcion) {
         this.nombre = nombre;
